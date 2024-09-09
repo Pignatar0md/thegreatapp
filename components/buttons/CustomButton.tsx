@@ -1,4 +1,4 @@
-import { StyleProp, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Pressable, StyleProp, StyleSheet, Text } from "react-native";
 import React, { FC } from "react";
 
 const CustomButton: FC<{
@@ -11,13 +11,9 @@ const CustomButton: FC<{
 	const customWrapper = [styles.defaultWrapper, containerStyle];
 	const customText = [styles.defaultText, textStyle];
 	return (
-		<TouchableOpacity
-			onPress={onPress}
-			disabled={isLoading}
-			style={customWrapper}
-		>
+		<Pressable onPress={onPress} disabled={isLoading} style={customWrapper}>
 			<Text style={customText}>{text}</Text>
-		</TouchableOpacity>
+		</Pressable>
 	);
 };
 
